@@ -1,0 +1,17 @@
+<!-- predictor/templates/predictor/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Prediction</title>
+</head>
+<body>
+    <h1>Upload CSV File for Sales Prediction</h1>
+    <form action="{% url 'predict_sales' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" accept=".csv">
+        <button type="submit">Upload and Predict</button>
+    </form>
+</body>
+</html>
